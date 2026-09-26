@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مسار الأعمال والحوكمة الرياضية · معاينة داخلية · أتام</title>
+<link rel="stylesheet" href="assets/player.css">
+<style>
+body{background:var(--graphite)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:var(--ink) center 20%/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,var(--graphite) 8%,rgba(6,9,10,.86) 55%,rgba(6,9,10,.6))}
+.hero .wrap{position:relative;padding:28px 24px 56px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:72px}
+.top img{height:28px}
+.flag{font-size:12px;letter-spacing:.14em;color:var(--steel);border:1px solid var(--line-strong);padding:6px 12px}
+.hero h1{font-size:clamp(32px,5vw,52px);line-height:1.2;color:var(--mist);margin:10px 0 14px;font-weight:700}
+.hero p.lead{font-size:18px;color:var(--steel);max-width:62ch;margin:0}
+.sum{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);margin-top:36px}
+.sum div{padding:16px 0 16px 18px}.sum div+div{border-right:1px solid var(--line-soft);padding-right:18px}
+.sum b{display:block;font-size:12px;letter-spacing:.14em;color:var(--steel);font-weight:500}
+.sum span{font-size:26px;color:var(--mist);font-weight:600}
+section.block{padding:56px 0 8px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.card{background:var(--charcoal);padding:26px;display:flex;flex-direction:column;gap:10px;min-height:260px;position:relative}
+.card .n{font-size:12px;letter-spacing:.18em;color:var(--steel)}
+.card h3{margin:0;font-size:21px;line-height:1.5;color:var(--mist)}
+.card p{margin:0;font-size:15px;color:var(--quiet);line-height:1.8}
+.card .meta{font-size:13px;color:var(--steel);margin-top:auto}
+.card .foot2{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:14px}
+.chip{font-size:12px;padding:3px 10px;border:1px solid var(--line-strong);color:var(--quiet)}
+.chip.passed{border-color:var(--ok);color:#9cc9b8}
+.chip.incomplete{border-color:var(--petroleum);color:#9fbcc5}
+.card.exam{grid-column:1 / -1;border-right:2px solid var(--petroleum);min-height:0}
+.card.locked .btn.primary{opacity:.45;pointer-events:none}
+.unlock{all:unset;cursor:pointer;font-size:13px;color:var(--steel);text-decoration:underline;text-underline-offset:4px}
+a.btn{text-decoration:none;display:inline-block}
+.checks{counter-reset:c;list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.checks li{counter-increment:c;display:grid;grid-template-columns:40px 1fr;gap:10px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.checks li::before{content:counter(c,decimal-leading-zero);color:var(--steel);font-size:12px;letter-spacing:.1em;padding-top:4px}
+.checks b{color:var(--mist);font-weight:600}
+.two{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
+.note{background:var(--charcoal);border:1px solid var(--line);border-right:2px solid var(--steel);padding:20px 22px;font-size:15px}
+.note h4{margin:0 0 6px;color:var(--mist);font-size:16px}
+.h2{font-size:12px;letter-spacing:.18em;color:var(--steel);margin:0 0 6px}
+.h2b{font-size:26px;color:var(--mist);margin:0 0 22px;font-weight:600}
+.pagefoot{margin-top:64px;padding:22px 0;border-top:1px solid var(--line);font-size:12px;color:var(--quiet);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:860px){.grid,.two{grid-template-columns:1fr}.sum{grid-template-columns:1fr}.sum div+div{border-right:0;border-top:1px solid var(--line-soft);padding-right:0}.top{margin-bottom:40px}}
+</style>
+</head>
+<body>
+<header class="hero" id="hero">
+  <div class="wrap">
+    <div class="top"><img src="assets/img/atam-wordmark-white.png" alt="atam"><span class="flag">معاينة داخلية · لا تُشارك خارج أتام</span></div>
+    <div class="eyebrow">أكاديمية منشآت · أربعة برامج واختبار ختامي</div>
+    <h1>مسار الأعمال والحوكمة الرياضية</h1>
+    <p class="lead">نسخة للفريق الداخلي لتجربة المسار كما سيظهر للمتدرب قبل رفعه على منصة منشآت. تُحفظ نتائجك في متصفحك فقط، ولا تصل إلى أي منصة.</p>
+    <div class="sum">
+      <div><b>البرامج المجتازة</b><span id="sPassed">0 من 4</span></div>
+      <div><b>الاختبار الختامي</b><span id="sExam">مقفل</span></div>
+      <div><b>درجة النجاح</b><span>60%</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="block">
+    <div class="h2">البرامج</div>
+    <div class="h2b">ادرس البرامج بأي ترتيب</div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="block">
+    <div class="two">
+      <div>
+        <div class="h2">للفريق</div>
+        <div class="h2b">ما نطلب تجربته</div>
+        <ol class="checks">
+          <li><div><b>المحتوى:</b> اقرأ وحدة كاملة على الأقل في كل برنامج، ودوّن أي خطأ في نص أو إحالة أو صياغة، مع اسم البرنامج ورقم الوحدة.</div></li>
+          <li><div><b>أسئلة المراجعة:</b> أجب عن أسئلة «تحقق من فهمك»، وتأكد أن الإجابة المعتمدة والشرح متسقان مع الدرس.</div></li>
+          <li><div><b>قفل الاختبار:</b> حاول فتح اختبار البرنامج قبل إكمال الوحدات. المتوقع أن يطلب إكمالها أولاً.</div></li>
+          <li><div><b>الرسوب:</b> أخطئ عمداً وتأكد أن الحالة تبقى «غير مكتمل» وأن إعادة المحاولة متاحة.</div></li>
+          <li><div><b>الاجتياز:</b> اجتز بـ60% فأكثر وتأكد أن الحالة تصبح «ناجح» هنا وفي صفحة المسار.</div></li>
+          <li><div><b>الاستئناف:</b> أغلق الصفحة وافتحها، وتأكد أنها تعود إلى موضعك.</div></li>
+          <li><div><b>الجوال:</b> جرّب برنامجاً واحداً على الأقل من الجوال.</div></li>
+          <li><div><b>الاختبار الختامي:</b> يُفتح بعد اجتياز البرامج الأربعة.</div></li>
+        </ol>
+      </div>
+      <div>
+        <div class="note"><h4>عن هذه النسخة</h4>
+          هذه النسخة تحاكي تسجيل المنصة داخل المتصفح. النسخة التي تُرسل إلى منشآت هي حزم SCORM بصيغة ZIP، ومحتواها مطابق لمحتوى هذه الصفحات.
+        </div>
+        <div class="note" style="margin-top:14px"><h4>البدء من جديد</h4>
+          يمحو كل نتائجك في هذا المتصفح للبرامج الخمسة.
+          <div style="margin-top:12px"><button type="button" class="btn" id="resetAll">محو كل النتائج</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>© 2026 شركة أتام محامون ومستشارون · نسخة معاينة داخلية</span>
+    <span>المحتوى توعوي ولا يُعد استشارة قانونية لحالة بعينها</span>
+  </footer>
+</main>
+
+<script>
+(function(){
+  var M = [{"key": "p1", "id": "ATAM-SPORT-P01-INVESTMENT", "title": "الاستثمار في قطاع الرياضة", "num": "01", "tag": "الإطار النظامي والتجاري للاستثمار الرياضي: الهيكل، والترخيص، والإيرادات، والدخول والخروج", "units": 8, "q": 8, "cover": "assets/img/cover-01.jpg"}, {"key": "p2", "id": "ATAM-SPORT-P02-TRADEMARKS", "title": "العلامات التجارية والامتياز التجاري في قطاع الرياضة", "num": "02", "tag": "من تسجيل الشعار إلى اتفاقية الامتياز: حماية الهوية التجارية للكيان الرياضي والتوسع بها نظامياً", "units": 5, "q": 5, "cover": "assets/img/cover-06.jpg"}, {"key": "p3", "id": "ATAM-SPORT-P03-GOVERNANCE", "title": "الحوكمة في قطاع الرياضة", "num": "03", "tag": "النظام الأساس، والأجهزة، والمسؤولية، والجزاءات: بناء حوكمة تحمي الكيان الرياضي وتؤهله للاستمرار", "units": 8, "q": 8, "cover": "assets/img/cover-07.jpg"}, {"key": "p4", "id": "ATAM-SPORT-P04-SPONSORSHIPS", "title": "الرعايات في قطاع الرياضة", "num": "04", "tag": "من عقد رعاية يحمي الحصرية إلى كيان رياضي جاهز لاستقطاب الرعاة", "units": 6, "q": 6, "cover": "assets/img/cover-08.jpg"}, {"key": "exam", "id": "ATAM-SPORT-TRACK-FINAL", "title": "الاختبار الختامي للمسار", "num": "", "tag": "اختبار واحد يغطي البرامج الأربعة، يُؤدى بعد إتمامها", "units": 0, "q": 26, "cover": "assets/img/cover-01.jpg"}];
+  var ST = { "not attempted": "لم يبدأ", "incomplete": "قيد الدراسة", "passed": "ناجح", "failed": "لم يجتز" };
+  function lms(id){ try { return JSON.parse(localStorage.getItem("atam.preview.lms." + id) || "{}"); } catch(e){ return {}; } }
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
+  document.getElementById("hero").style.backgroundImage = "url(" + M[0].cover + ")";
+  var grid = document.getElementById("grid");
+  var progs = M.filter(function(m){ return m.key !== "exam"; }), exam = M.filter(function(m){ return m.key === "exam"; })[0];
+  var passed = progs.filter(function(m){ return lms(m.id)["cmi.core.lesson_status"] === "passed"; }).length;
+  function card(m, isExam){
+    var d = lms(m.id), st = d["cmi.core.lesson_status"] || "not attempted", sc = d["cmi.core.score.raw"];
+    var locked = isExam && passed < 4 && st !== "passed";
+    var label = st === "passed" ? "مراجعة البرنامج" : (st === "incomplete" ? "متابعة" : "ابدأ");
+    var el = document.createElement("article");
+    el.className = "card" + (isExam ? " exam" : "") + (locked ? " locked" : "");
+    el.innerHTML = '<div class="n">' + (isExam ? "التقييم الختامي" : "البرنامج " + m.num) + '</div>' +
+      '<h3>' + esc(m.title) + '</h3><p>' + esc(m.tag) + '</p>' +
+      '<div class="meta">' + (isExam ? m.q + " سؤالاً تغطي البرامج الأربعة" : m.units + " وحدات · ورش تطبيقية · اختبار من " + m.q + " أسئلة") + '</div>' +
+      '<div class="foot2"><span class="chip ' + st + '">' + (locked ? "مقفل حتى اجتياز البرامج الأربعة" : (ST[st] || st) + (sc ? " · " + sc + "%" : "")) + '</span>' +
+      '<span>' + (locked ? '<button type="button" class="unlock">فتح للتجربة</button> ' : '') + '<a class="btn primary" href="' + m.key + '/">' + label + ' <span class="arr">←</span></a></span></div>';
+    if (locked) el.querySelector(".unlock").onclick = function(){ location.href = m.key + "/"; };
+    return el;
+  }
+  progs.forEach(function(m){ grid.appendChild(card(m, false)); });
+  grid.appendChild(card(exam, true));
+  document.getElementById("sPassed").textContent = passed + " من 4";
+  var es = lms(exam.id)["cmi.core.lesson_status"];
+  document.getElementById("sExam").textContent = es === "passed" ? "ناجح" : (passed === 4 ? "متاح" : "مقفل");
+  document.getElementById("resetAll").onclick = function(){
+    M.forEach(function(m){ try { localStorage.removeItem("atam.preview.lms." + m.id); localStorage.removeItem("atam." + m.id); } catch(e){} });
+    location.reload();
+  };
+})();
+</script>
+</body>
+</html>
