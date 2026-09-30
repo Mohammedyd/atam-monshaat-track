@@ -1,6 +1,7 @@
 /* ATAM learning player: navigation, knowledge checks, graded test, SCORM 1.2 tracking. */
 (function () {
   "use strict";
+  function arQ(n){ return n===1?"سؤال واحد":n===2?"سؤالان":(n>=3&&n<=10)?n+" أسئلة":n+" سؤالاً"; }
   var C = window.ATAM_COURSE, S = window.ATAM_SCORM;
   var LETTERS = ["أ", "ب", "ج", "د", "هـ", "و"];
   var pages = [];            // {kind:'cover'|'lesson'|'test'|'closing', title, idx}
@@ -208,7 +209,7 @@
     var pm = C.test.passMark;
     w.appendChild(el("div", { class: "test-intro" },
       "<p style='margin:0 0 6px'>" + esc(C.test.instructions) + "</p><p style='margin:0;color:var(--quiet);font-size:15px'>" +
-      C.test.questions.length + " سؤالاً · درجة النجاح " + pm + "% · المحاولات السابقة: " + test.a +
+      arQ(C.test.questions.length) + " · درجة النجاح " + pm + "% · المحاولات السابقة: " + test.a +
       (test.s != null ? " · آخر درجة: " + test.s + "%" : "") + "</p>"));
     if (test.p) {
       w.appendChild(resultBox(test.s, true, true));
